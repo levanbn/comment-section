@@ -12,4 +12,6 @@ export class ReplySectionComponent {
   @Input()  data:any;
   mainUser:string="juliusomo";
 
+
 }
+

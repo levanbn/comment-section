@@ -1,0 +1,63 @@
+<div class="comment">
+  <div class="comment-likes">
+    <button><img src="../../assets/images/icon-plus.svg" /></button>
+    <p>{{ data.comments[comments_index].replies[replies_index].score }}</p>
+    <button><img src="../../assets/images/icon-minus.svg" /></button>
+  </div>
+  <div class="comment-nonelikes">
+    <div class="comment-nonelikes-head">
+      <div class="comment-nonelikes-head-avatar">
+        <img
+          src="{{
+            data.comments[comments_index].replies[replies_index].user.image.png
+          }}"
+        />
+        <p>
+          {{ data.comments[comments_index].replies[replies_index].user.username }}
+        </p>
+        <p
+          class="you"
+          *ngIf="
+          data.comments[comments_index].replies[replies_index].user.username == mainUser
+          "
+        >
+          you
+        </p>
+        <p>
+          {{ data.comments[comments_index].replies[replies_index].createdAt }}
+        </p>
+      </div>
+      <div class="comment-nonelikes-head-settings">
+        <div
+          class="delete"
+          *ngIf="
+          data.comments[comments_index].replies[replies_index].user.username == mainUser
+          "
+        >
+          <img src="../../assets/images/icon-delete.svg" />
+          <p>Delete</p>
+        </div>
+        <div
+          class="reply"
+          *ngIf="
+          data.comments[comments_index].replies[replies_index].user.username !== mainUser
+          "
+        >
+          <img src="../../assets/images/icon-reply.svg" />
+          <p>Reply</p>
+        </div>
+        <div
+          class="edit"
+          *ngIf="
+            data.comments[comments_index].replies[replies_index].user.username == mainUser"
+        >
+          <img src="../../assets/images/icon-edit.svg" />
+          <p>Edit</p>
+        </div>
+      </div>
+    </div>
+    <p class="text">
+      {{ data.comments[comments_index].replies[replies_index].content }}
+    </p>
+  </div>
+</div>

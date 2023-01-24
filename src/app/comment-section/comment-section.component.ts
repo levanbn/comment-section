@@ -12,9 +12,9 @@ export class CommentSectionComponent implements OnInit {
 
   // ganaxleba
   ngOnInit() {
-    let LSD = localStorage.getItem('data');
-    if (LSD) {
-      this.data = JSON.parse(LSD);
+    let LST = localStorage.getItem('data');
+    if (LST) {
+      this.data = JSON.parse(LST);
     } else {
       this.data = json;
     }

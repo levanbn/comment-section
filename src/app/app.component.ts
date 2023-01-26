@@ -8,7 +8,17 @@ import json from '../assets/data/data.json';
 export class AppComponent {
   title = 'comment-section';
   data:any = json;
-
+  constructor() {
+    this.checkData()
+  }
+  checkData() {
+    let LST = localStorage.getItem('data');
+    if (LST) {
+      this.data = JSON.parse(LST);
+    } else {
+      this.data = json;
+    }
+  }
 
 }
 

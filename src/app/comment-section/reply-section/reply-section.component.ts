@@ -11,13 +11,12 @@ export class ReplySectionComponent {
   @Input() comments_index: number = -1;
   @Input()  data:any;
   askDelete: boolean = false;
-  mainUser:string="juliusomo";
   deleteReply() {
     this.askDelete = !this.askDelete;
-
     localStorage.setItem('data', JSON.stringify(this.data));
   }
   deleteYes() {
+    this.askDelete = !this.askDelete;
     this.data.comments[this.comments_index].replies.splice(this.replies_index,1);
     localStorage.setItem('data', JSON.stringify(this.data));
   }

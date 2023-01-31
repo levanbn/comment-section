@@ -12,7 +12,6 @@ export class CommentSectionComponent implements OnInit {
   @Input() index: number = -1;
   @Input() currentuser: any;
   showReplyInput: boolean = false;
-  mainUser: string = 'juliosmo';
   newReply: object = {};
   replyContent: string = '';
   askDelete: boolean = false;

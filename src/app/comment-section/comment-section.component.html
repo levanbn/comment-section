@@ -9,23 +9,23 @@
       <div class="comment-nonelikes-head-avatar">
         <img src={{data.comments[index].user.image.png}} >
         <p>{{data.comments[index].user.username}}</p>
-        <p class="you" *ngIf="data.comments[index].user.username == mainUser">you</p>
+        <p class="you" *ngIf="data.comments[index].user.username == data.currentUser.username">you</p>
         <p>{{data.comments[index].createdAt}}</p>
       </div>
       <div class="comment-nonelikes-head-settings">
-        <div class="delete" *ngIf="data.comments[index].user.username == mainUser" (click) = "deleteComment()" >
+        <div class="delete" *ngIf="data.comments[index].user.username == data.currentUser.username" (click) = "deleteComment()" >
           <img src="../../assets/images/icon-delete.svg">
           <p>Delete</p>
         </div>
-        <div class="reply" *ngIf="data.comments[index].user.username !== mainUser" (click) = showReplyButton()>
+        <div class="reply" *ngIf="data.comments[index].user.username !== data.currentUser.username" (click) = showReplyButton()>
             <img src="../../assets/images/icon-reply.svg">
             <p>Reply</p>
         </div>
-        <div class="edit" *ngIf="data.comments[index].user.username == mainUser">
+        <div class="edit" *ngIf="data.comments[index].user.username == data.currentUser.username">
           <img src="../../assets/images/icon-edit.svg">
           <p>Edit</p>
         </div>
-      </div>npm
+      </div>
     </div>
     <p class="text">{{data.comments[index].content}}</p>
     </div>

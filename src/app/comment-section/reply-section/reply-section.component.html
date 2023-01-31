@@ -18,7 +18,7 @@
         <p
           class="you"
           *ngIf="
-          data.comments[comments_index].replies[replies_index].user.username == mainUser
+          data.comments[comments_index].replies[replies_index].user.username == data.currentUser.username
           "
         >
           you
@@ -31,7 +31,7 @@
         <div
           class="delete"
           *ngIf="
-          data.comments[comments_index].replies[replies_index].user.username == mainUser
+          data.comments[comments_index].replies[replies_index].user.username == data.currentUser.username
           " (click)="deleteReply()"
         >
           <img src="../../assets/images/icon-delete.svg" />
@@ -40,7 +40,7 @@
         <div
           class="reply"
           *ngIf="
-          data.comments[comments_index].replies[replies_index].user.username !== mainUser"
+          data.comments[comments_index].replies[replies_index].user.username !== data.currentUser.username"
         >
           <img src="../../assets/images/icon-reply.svg" />
           <p>Reply</p>
@@ -48,7 +48,7 @@
         <div
           class="edit"
           *ngIf="
-            data.comments[comments_index].replies[replies_index].user.username == mainUser"
+            data.comments[comments_index].replies[replies_index].user.username == data.currentUser.username"
         >
           <img src="../../assets/images/icon-edit.svg" />
           <p>Edit</p>
